@@ -1,0 +1,20 @@
+services:
+  web:
+    image: php:8.4.5-apache 
+    build: .
+    container_name: php-sandbox
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - 80:80
+    
+  db:
+    image: postgres
+    container_name: psql-php
+    restart: always
+    volumes:
+      - ./psql_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - 5431:5432
