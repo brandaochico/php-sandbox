@@ -1,5 +1,14 @@
 <?php
 $output = null;
+
+$array = [
+    'name' => 'Chico',
+    'age' => '20',
+    'course' => 'Computer Science',
+    'languages' => ['Portuguese', 'Spanish', 'English', 'Dutch']
+];
+
+$output = 'Course: ' . $array['course'];
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +31,11 @@ $output = null;
         <div class="bg-white rounded-lg shadow-md p-6 mt-6">
             <!-- Output -->
             <p class="text-xl"><?= $output ?></p>
+            <p>
+                <pre>
+                    <?php print_r($array) ?>
+                </pre>
+            </p>
         </div>
     </div>
 </body>
