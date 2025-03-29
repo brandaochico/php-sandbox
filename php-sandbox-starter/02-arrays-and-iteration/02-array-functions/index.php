@@ -1,5 +1,19 @@
 <?php
 $output = null;
+
+$array = [1,2,3,4,5];
+
+$output = $array[1]; 
+
+array_push($array, 6);
+
+array_pop($array);
+
+array_shift($array);
+
+array_unshift($array, 50);
+
+$output = 'Array Sum: ' . array_sum($array);
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +36,11 @@ $output = null;
         <div class="bg-white rounded-lg shadow-md p-6 mt-6">
             <!-- Output -->
             <p class="text-xl"><?= $output ?></p>
+            </p>
+            <p>
+                <pre>
+                    <?php print_r($array) ?>
+                </pre>
             </p>
         </div>
     </div>

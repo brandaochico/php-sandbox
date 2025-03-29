@@ -1,5 +1,19 @@
 <?php
 $output = null;
+
+$fruits = [
+  ['Apple', 'Red'],
+  ['Orange', 'Orange'],
+  ['Banana', 'Yellow']
+];
+
+$output = 'Color of ' . $fruits[0][0] . ': ' . $fruits[0][1];
+
+$users = [
+  ['name' => 'Chico', 'email' => 'chico@gmail.com', 'password' => '123456'],
+  ['name' => 'João', 'email' => 'joao@gmail.com', 'password' => '123456'],
+  ['name' => 'Julia', 'email' => 'julia@gmail.com', 'password' => '123456'],
+]
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +36,11 @@ $output = null;
     <div class="bg-white rounded-lg shadow-md p-6 mt-6">
       <!-- Output -->
       <p class="text-xl"><?= $output ?></p>
+        <p>
+          <pre>
+              <?php print_r($users) ?>
+          </pre>
+        </p>
     </div>
   </div>
 </body>
