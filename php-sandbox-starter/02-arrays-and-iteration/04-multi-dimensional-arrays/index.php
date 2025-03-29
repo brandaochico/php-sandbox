@@ -13,7 +13,9 @@ $users = [
   ['name' => 'Chico', 'email' => 'chico@gmail.com', 'password' => '123456'],
   ['name' => 'João', 'email' => 'joao@gmail.com', 'password' => '123456'],
   ['name' => 'Julia', 'email' => 'julia@gmail.com', 'password' => '123456'],
-]
+];
+
+array_push($users,['name' => 'Leandro', 'email' => 'leandro@gmail.com', 'password' => '123456']);
 ?>
 
 <!DOCTYPE html>
