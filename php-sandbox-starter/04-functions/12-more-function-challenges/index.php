@@ -52,7 +52,7 @@ echo '<br>';
 
 echo '<h2>Longest word in sentence</h2>';
 
-$sentence = "My name is Chico and I like to code! I'm currently learning PHP, which translates to Hypertext Processor!";
+$sentence = "My name is Chico and I like to code! I'm currently learning PHP, which to Hypertext Processor!";
 
 function findLongestWord($sentence) {
   $longestWord = '';

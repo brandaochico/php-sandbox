@@ -1,3 +1,54 @@
+<?php
+
+interface ContentInterface {
+  public function display();
+  public function edit();
+}
+
+class Article implements ContentInterface {
+  private $title;
+  private $content;
+
+  public function __construct($title, $content) {
+    $this->title = $title;
+    $this->content = $content;
+  }
+
+  public function display() {
+    echo "<h2>{$this->title}</h2>" ;
+    echo "<p>{$this->content}</p>";
+  }
+
+  public function edit() {
+    echo "Editing the article: " . $this->title;
+  }
+}
+
+class Video implements ContentInterface {
+  private $title;
+  private $url;
+
+  public function __construct($title, $url) {
+    $this->title = $title;
+    $this->url = $url;
+  }
+
+  public function display() {
+    echo "<h2>{$this->title}</h2><br>" ;
+    echo "<iframe src='{$this->url}'></iframe>";
+  }
+
+  public function edit() {
+    echo "Editing the video: " . $this->title;
+  }
+}
+
+$article = new Article('Lorem Ipsum', 'Sample Text');
+$video = new Video('Click it now', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +67,10 @@
   </header>
   <div class="container mx-auto p-4 mt-4">
     <div class="bg-white rounded-lg shadow-md p-6 mt-6">
-      <!-- Output -->
+      <?= $article->display() ?>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+      <?= $video->display() ?>
     </div>
   </div>
 </body>
