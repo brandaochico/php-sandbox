@@ -10,3 +10,11 @@ Names Challenge:
 */
 
 $names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Elanor', 'Anna', 'Freddie', 'Adam'];
+
+foreach($names as $name) {
+    if($name[0] === 'A') { continue; }
+    else {
+        $revName = strrev($name);
+        echo strtolower($revName) . '<br>';
+    }
+}

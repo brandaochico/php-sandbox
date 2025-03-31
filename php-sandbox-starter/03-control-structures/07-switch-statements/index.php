@@ -1,3 +1,40 @@
+<?php
+
+$dow = date('l');
+
+switch($dow) {
+  case 'Monday':
+    $text = 'Monday Blues!';
+    $color = 'blue';
+    break;
+  case 'Tuesday':
+    $text = 'Tuesday Greens!';
+    $color = 'green';
+    break;
+  case 'Wednesday':
+    $text = 'Wednesday Yellows!';
+    $color = 'yellow';
+    break;
+  case 'Thursday':
+    $text = 'Thursday Reds!';
+    $color = 'reds';
+    break;
+  case 'Friday':
+    $text = 'Friday Orange!';
+    $color = 'orange';
+    break;
+  case 'Saturday':
+    $text = 'Satuday Pinks!';
+    $color = 'pink';
+    break;
+  case 'Sunday':
+    $text = 'Sunday Purples!';
+    $color = 'purple';
+    break;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +48,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: blue;
+      background-color: <?= $color ?>;
       color: white;
       display: flex;
       justify-content: center;
@@ -22,7 +59,7 @@
 </head>
 
 <body>
-  <h1>Monday blues!</h1>
+  <h1><?= $text ?><h1>
 </body>
 
 </html>
