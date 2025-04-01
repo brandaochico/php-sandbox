@@ -1,19 +1,20 @@
 <?php
+    require('database.php');
 
-require_once 'database.php';
+   $isDeleteRequest =  $_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['_method'] === 'delete';
 
-$isDeleteRequest = ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['_method'] ?? '') === 'delete');
+    if($isDeleteRequest) {
+        $id = $_POST['id'];
 
-if ($isDeleteRequest) {
-  $id = $_POST['id'];
+        $sql = 'DELETE FROM users WHERE id = :id';
 
-  $sql = 'DELETE FROM posts WHERE id = :id';
+        $stmt = $pdo->prepare($sql);
 
-  $stmt = $pdo->prepare($sql);
+        $params = ['id' => $id];
 
-  $params = ['id' => $id];
+        $stmt->execute($params);
 
-  $stmt->execute($params);
+        header('Location: index.php');
 
-  header('Location: index.php');
-}
+        exit;
+    }
