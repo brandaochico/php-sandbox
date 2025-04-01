@@ -31,7 +31,7 @@
         <div class="rounded-lg shadow-md">
           <div class="p-4">
             <h2 class="text-xl font-semibold"><a href="user.php?id=<?= $user['id'] ?>"><?= $user['name'] ?></a></h2>
-            <p class="text-gray-700 text-lg mt-2"></p>
+            <p class="text-gray-700 text-lg mt-2"><?= $user['job'] ?></p>
           </div>
         </div>
       </div>
